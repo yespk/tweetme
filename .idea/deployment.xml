@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="https://github.com/yespk/tweetme.git" remoteFilesAllowedToDisappearOnAutoupload="false" />
+  <component name="PublishConfigData" serverName="https://github.com/yespk/tweetme.git" uploadOnCheckin="c91f6446-0534-4c83-998a-20a47ddd1138" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <option name="myUploadOnCheckinName" value="https://github.com/yespk/tweetme.git" />
+  </component>
 </project>
