@@ -25,7 +25,7 @@ SECRET_KEY = '9^mvc+!bp*gz1$5-$_^t8amna5pm+_s8@iwnxobkdoyt(ag0e%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'sarasgo.in']
 
 # Application definition
 
