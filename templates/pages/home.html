@@ -13,7 +13,7 @@
 
     <div class="row mb-3">
         <div class="col-md-4 mx-auto col-10">
-            <form action="/create-tweet" method="post" class="form">
+            <form action="/create-tweet" method="post" class="form" id="tweet-create-form">
                 {% csrf_token %}
                 <input type="hidden" name="next" value="/"/>
                 <textarea name="content" id="" placeholder="Your tweet..." class="form-control mb-1"></textarea>
@@ -27,6 +27,30 @@
     </div>
 
     <script>
+
+        function handleTweetCreateFormDidSumbit(event) {
+            event.preventDefault()
+            const myForm = event.target
+            const myFormData = new FormData(myForm)
+            const url = myForm.getAttribute("action")
+            const method = myForm.getAttribute("method")
+            const xhr = new XMLHttpRequest()
+            xhr.open(method, url)
+            xhr.setRequestHeader("HTTP_X_REQUESTED_WITH", "XMLHttpRequest")
+            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest")
+            xhr.onload = function () {
+                const serverResponse = xhr.response
+                // console.log(serverResponse)
+                const tweetsEl = document.getElementById("tweets")
+                loadTweets(tweetsEl)
+            }
+            xhr.send(myFormData)
+            // console.log(url, method)
+            // console.log(event)
+        }
+
+        const tweetCreateFormEl = document.getElementById("tweet-create-form")
+        tweetCreateFormEl.addEventListener("submit", handleTweetCreateFormDidSumbit)
 
         const tweetsEl = document.getElementById("tweets")     // get an html element
 
